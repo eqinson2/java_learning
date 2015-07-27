@@ -1,1 +1,0 @@
-native2ascii -encoding gb2312 ApplicationResources_temp.properties ApplicationResources_zh_CN.properties

@@ -1,0 +1,3 @@
+grant codeBase "file:/c/maworkspace/java_learning/JavaRMI/src" {
+    permission java.security.AllPermission;
+};

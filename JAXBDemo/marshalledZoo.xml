@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zoo>
+    <zooName>Gir National Park</zooName>
+    <zooId>987789</zooId>
+    <animals>
+        <animal>
+            <animalName>Jaguar</animalName>
+            <animalType>Wild</animalType>
+        </animal>
+        <animal>
+            <animalName>Goat</animalName>
+            <animalType>Domestic</animalType>
+        </animal>
+        <animal>
+            <animalName>Puma</animalName>
+            <animalType>Wild</animalType>
+        </animal>
+    </animals>
+</zoo>

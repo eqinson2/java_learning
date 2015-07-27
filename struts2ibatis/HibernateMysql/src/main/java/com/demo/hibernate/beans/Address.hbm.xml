@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<!-- Created by the Middlegen Hibernate plugin 2.1 http://boss.bekk.no/boss/middlegen/ 
+		http://www.hibernate.org/ -->
+
+	<class name="com.demo.hibernate.beans.Address" table="address">
+
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="username" type="java.lang.String" column="username"
+			not-null="true" length="50" />
+		<property name="name" type="java.lang.String" column="name"
+			not-null="true" length="50" />
+		<property name="sex" type="java.lang.String" column="sex"
+			length="10" />
+		<property name="mobile" type="java.lang.String" column="mobile"
+			length="20" />
+		<property name="email" type="java.lang.String" column="email"
+			length="50" />
+		<property name="qq" type="java.lang.String" column="qq"
+			length="20" />
+		<property name="company" type="java.lang.String" column="company"
+			length="100" />
+		<property name="address" type="java.lang.String" column="address"
+			length="100" />
+		<property name="postcode" type="java.lang.String" column="postcode"
+			length="10" />
+
+		<!-- Associations -->
+
+
+	</class>
+</hibernate-mapping>

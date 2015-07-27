@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+	<settings enhancementEnabled="true" useStatementNamespaces="true"
+		cacheModelsEnabled="true" lazyLoadingEnabled="true" />
+
+	<transactionManager type="JDBC">
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver" value="com.mysql.jdbc.Driver" />
+			<property name="JDBC.ConnectionURL" value="jdbc:mysql://localhost:3306/demo" />
+			<property name="JDBC.Username" value="root" />
+			<property name="JDBC.Password" value="root000" />
+			<property name="Pool.MaximumActiveConnections" value="10" />
+			<property name="Pool.MaximumIdleConnections" value="5" />
+			<property name="Pool.MaximumCheckoutTime" value="120000" />
+			<property name="Pool.TimeToWait" value="500" />
+			<property name="Pool.PingQuery" value="select 1 from user" />
+			<property name="Pool.PingEnabled" value="false" />
+			<property name="Pool.PingConnectionsOlderThan" value="1" />
+			<property name="Pool.PingConnectionsNotUsedFor" value="1" />
+		</dataSource>
+	</transactionManager>
+
+	<sqlMap resource="com/demo/ibatis/beans/user_SqlMap.xml" />
+	<sqlMap resource="com/demo/ibatis/beans/address_SqlMap.xml" />
+	<sqlMap resource="com/demo/ibatis/beans/sms_SqlMap.xml" />
+	<sqlMap resource="com/demo/ibatis/beans/schedule_SqlMap.xml" />
+	<sqlMap resource="com/demo/ibatis/beans/worklog_SqlMap.xml" />
+	<sqlMap resource="com/demo/ibatis/beans/notice_SqlMap.xml" />
+	<sqlMap resource="com/demo/ibatis/beans/meeting_SqlMap.xml" />
+
+</sqlMapConfig>
+
+
+

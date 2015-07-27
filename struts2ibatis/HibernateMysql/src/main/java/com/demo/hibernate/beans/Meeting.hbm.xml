@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<!-- Created by the Middlegen Hibernate plugin 2.1 http://boss.bekk.no/boss/middlegen/ 
+		http://www.hibernate.org/ -->
+
+	<class name="com.demo.hibernate.beans.Meeting" table="meeting">
+
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="sender" type="java.lang.String" column="sender"
+			not-null="true" length="50" />
+		<property name="starttime" type="java.lang.String" column="starttime"
+			length="20" />
+		<property name="endtime" type="java.lang.String" column="endtime"
+			length="20" />
+		<property name="address" type="java.lang.String" column="address"
+			length="100" />
+		<property name="title" type="java.lang.String" column="title"
+			length="100" />
+		<property name="content" type="java.lang.String" column="content"
+			length="65535" />
+
+		<!-- Associations -->
+
+
+	</class>
+</hibernate-mapping>

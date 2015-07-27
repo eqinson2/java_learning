@@ -6,10 +6,6 @@ UserGuide/
 .repository/
 log/
 logs/
-.prefs
-.classpath
-.project
-.settings
 *\.orig
 *\.back
 *\.bak

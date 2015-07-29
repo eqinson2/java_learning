@@ -65,7 +65,6 @@ public class HibernateSessionFactory {
 	 *
 	 * @throws HibernateException
 	 */
-	@SuppressWarnings("unchecked")
 	public static void closeSession() throws HibernateException {
 		Session session = threadLocal.get();
 		threadLocal.set(null);

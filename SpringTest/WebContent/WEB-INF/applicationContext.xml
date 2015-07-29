@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="HelloWorld" class="com.demo.spring.test.HelloWorld">
+		<property name="message">
+			<value>World</value>
+		</property>
+	</bean>
+
+	<!-- 定义视图 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>
+				org.springframework.web.servlet.view.InternalResourceView
+			</value>
+		</property>
+		<!-- JSP都放在/目录下 -->
+		<property name="prefix">
+			<value>/</value>
+		</property>
+		<!-- JSP页面的后缀都四.JSP -->
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+	<!-- 定义映射 -->
+	<bean id="testMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/test.do">testAction</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!---定义Action-->
+	<bean id="testAction" class="com.demo.spring.actions.TestAction">
+		<property name="commandClass">
+			<value>com.demo.spring.forms.TestForm</value>
+		</property>
+		<!-- 指定失败要返回的页面 -->
+		<property name="formView">
+			<value>input</value>
+		</property>
+		<!-- 指定成功要返回的页面 -->
+		<property name="successView">
+			<value>success</value>
+		</property>
+	</bean>
+</beans>

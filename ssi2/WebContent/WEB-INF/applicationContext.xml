@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+
+	<bean id="sqlMapClient" class="com.demo.ibatis.util.SqlMapClientFactory"
+		factory-method="getSqlMapClient">
+	</bean>
+
+	<!-- 配置DAO -->
+	<bean id="addressDAO" class="com.demo.ibatis.dao.AddressDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="userDAO" class="com.demo.ibatis.dao.UserDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="scheduleDAO" class="com.demo.ibatis.dao.ScheduleDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="worklogDAO" class="com.demo.ibatis.dao.WorklogDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="smsDAO" class="com.demo.ibatis.dao.SmsDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="noticeDAO" class="com.demo.ibatis.dao.NoticeDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="meetingDAO" class="com.demo.ibatis.dao.MeetingDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<!-- 配置Service -->
+	<bean id="userService" class="com.demo.ibatis.service.UserServiceImpl">
+		<property name="userDAO">
+			<ref local="userDAO" />
+		</property>
+	</bean>
+	<bean id="addressService" class="com.demo.ibatis.service.AddressServiceImpl">
+		<property name="addressDAO">
+			<ref local="addressDAO" />
+		</property>
+	</bean>
+	<bean id="scheduleService" class="com.demo.ibatis.service.ScheduleServiceImpl">
+		<property name="scheduleDAO">
+			<ref local="scheduleDAO" />
+		</property>
+	</bean>
+	<bean id="worklogService" class="com.demo.ibatis.service.WorklogServiceImpl">
+		<property name="worklogDAO">
+			<ref local="worklogDAO" />
+		</property>
+	</bean>
+	<bean id="smsService" class="com.demo.ibatis.service.SmsServiceImpl">
+		<property name="smsDAO">
+			<ref local="smsDAO" />
+		</property>
+	</bean>
+	<bean id="noticeService" class="com.demo.ibatis.service.NoticeServiceImpl">
+		<property name="noticeDAO">
+			<ref local="noticeDAO" />
+		</property>
+	</bean>
+	<bean id="meetingService" class="com.demo.ibatis.service.MeetingServiceImpl">
+		<property name="meetingDAO">
+			<ref local="meetingDAO" />
+		</property>
+	</bean>
+
+
+	<!-- 定义Struts配置 -->
+	<bean name="loginAction" class="com.demo.struts2.actions.LoginAction">
+		<property name="userService">
+			<ref local="userService" />
+		</property>
+	</bean>
+	<bean name="logoutAction" class="com.demo.struts2.actions.LogoutAction">
+		<property name="userService">
+			<ref local="userService" />
+		</property>
+	</bean>
+	<bean name="registerAction" class="com.demo.struts2.actions.RegisterAction">
+		<property name="userService">
+			<ref local="userService" />
+		</property>
+	</bean>
+	<bean name="addressAction" class="com.demo.struts2.actions.AddressAction">
+		<property name="addressService">
+			<ref local="addressService" />
+		</property>
+	</bean>
+	<bean name="scheduleAction" class="com.demo.struts2.actions.ScheduleAction">
+		<property name="scheduleService">
+			<ref local="scheduleService" />
+		</property>
+	</bean>
+	<bean name="worklogAction" class="com.demo.struts2.actions.WorklogAction">
+		<property name="worklogService">
+			<ref local="worklogService" />
+		</property>
+	</bean>
+	<bean name="smsAction" class="com.demo.struts2.actions.SmsAction">
+		<property name="smsService">
+			<ref local="smsService" />
+		</property>
+	</bean>
+	<bean name="noticeAction" class="com.demo.struts2.actions.NoticeAction">
+		<property name="noticeService">
+			<ref local="noticeService" />
+		</property>
+	</bean>
+	<bean name="meetingAction" class="com.demo.struts2.actions.MeetingAction">
+		<property name="meetingService">
+			<ref local="meetingService" />
+		</property>
+	</bean>
+
+</beans>

@@ -6,6 +6,7 @@ UserGuide/
 .repository/
 log/
 logs/
+Servers/
 *\.orig
 *\.back
 *\.bak
